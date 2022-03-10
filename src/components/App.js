@@ -1,12 +1,23 @@
-import './../assets/css/App.css';
+import React from 'react'
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import Homepage from '../pages/Homepage';
+
+import "../assets/css/App.css"
+//import "bootswatch/dist/minty/bootstrap.min.css";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello REST INN</h1>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
