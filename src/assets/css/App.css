@@ -285,65 +285,25 @@
   }
   /* End of FOOTER */
   
-
-/* HEADER */
-/*
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: white;
-    width: 100%;
+/* SignUp Form*/
+.signup-container{
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
-.header__icon {
-    object-fit: contain;
-    height: 100px;
-    margin-left: 20px;
+p.passwordreq {
+  opacity: 0.5;
+  font-size: small;
 }
 
-.header__center {
-    display: flex;
-    flex: 1;
-    align-items: center;
-    max-width: fit-content;
-    padding: 10px;
-    height: 30px;
-    border: 2px solid lightgray;
-    border-radius: 999px;
+
+/* End of SignUp Form*/
+
+/* Login Form*/
+.login-container{
+  padding-top: 2rem;
+  padding-bottom: 5rem;
 }
 
-.header__center > input {
-    border: none;
-    padding: 10px;
-    outline-width: 0px;
-}
 
-.header__center > .icon {
-    padding: 10px;
-    background-color: rgb(223, 136, 136);
-    border-radius: 999px;
-}
-
-.header__right {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-right: 80px;
-    width: 15vw;
-}
-
-.header__right__account {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    height: 30px;
-    width: 4vw;
-    border: 2px solid lightgray;
-    border-radius: 99px;
-}
-*/
+/* End of Login Form*/
