@@ -1,22 +1,11 @@
 # CJV805 A1
-Rest-Inn App designed by React
 
-## Available Scripts
+# Rest-Inn Website (React Version)
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Rules to Setup the project locally
+1. Create an empty folder and attach it to your workspace area in VS Code
+1. Open terminal
+1. Clone this repo by running your **git clone project URL .** 
+1. Reinstall all your dependencies by running the following command **npm i**
+1. Start React project by running **npm start** in the terminal
+1. Open a second terminal and start up the (Fake Back-End) **json-server --port 5000 --watch db.json**
