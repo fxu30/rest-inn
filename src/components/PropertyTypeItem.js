@@ -1,8 +1,15 @@
 import React from 'react'
 
-const PropertyTypeItem = () => {
+const PropertyTypeItem = ({src, type}) => {
   return (
-    <div>PropertyTypeItem</div>
+    <div className='card'>
+      <picture style={{ backgroundImage: `url(${src})`}}> 
+      </picture>
+      
+      <div className='card-section'>
+        <h4>{type}</h4>
+      </div>
+    </div>
   )
 }
 

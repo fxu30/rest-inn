@@ -7,21 +7,16 @@ import PropertyTypeList from '../components/PropertyTypeList'
 
 const Homepage = () => {
   return (
-      <div className="app">
-
-        <Header/>
-        <Hero />
-        
-    </div>
+    <>
+    <Header />
+    
+    <Hero />
+    <hr />
+    <PropertyTypeList />
+    <BestSellerList />
+    
+    <Footer />
+    </>
   )
 }
-/*
-<main>
-          <Hero />
-          <PropertyTypeList />
-          <br />
-          <BestSellerList />
-        </main>
-        <Footer />
-        */
 export default Homepage
