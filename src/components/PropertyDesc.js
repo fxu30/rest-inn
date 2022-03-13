@@ -9,10 +9,6 @@ const PropertyDesc = () => {
         <ul className="breadcrumbs">
           <li><a href="#">Home</a></li>
           <li><a href="#">Features</a></li>
-          <li className="disabled">Gene Splicing</li>
-          <li>
-            <span className="show-for-sr">Current: </span> Cloning
-          </li>
         </ul>
       </nav>
     </div>
