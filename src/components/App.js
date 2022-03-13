@@ -11,6 +11,7 @@ import PropertyDescriptionPage from '../pages/PropertyDescriptionPage';
 import PropertyListingPage from '../pages/PropertyListingPage';
 import RegistrationPage from '../pages/RegistrationPage';
 import ScrollToTop from '../components/ScrollToTop'
+import PropertyTypePage from '../pages/PropertyTypePage';
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="login" element={<LoginPage />} />
         <Route path='listing' element={<PropertyListingPage />} />
         <Route path='listing/:id' element={<PropertyDescriptionPage />} />
+        <Route path='propertytype/:type' element={<PropertyTypePage />} />
       </Routes>
       </ScrollToTop>
     </BrowserRouter>
