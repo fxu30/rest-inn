@@ -30,15 +30,14 @@ const PropertyListItem = ({
                     <p>{description}</p>
                 </div>
 
-                <div className="propertyItem__infoBottom">
+                {/*<div className="propertyItem__infoBottom">
                     <div className="propertyItem__star">
                         <StarIcon className="propertyItem__stars" />
                         <p>
                             <strong>{star}</strong>
                         </p>
                     </div>
-                    
-                </div>
+                  </div>*/}
             </div>
         </div>
 

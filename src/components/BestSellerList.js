@@ -1,10 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import BestSellerItem from './BestSellerItem'
 import { Link } from 'react-router-dom'
-import resortImg from '../assets/img/resort.jpg'
-import hotelImg from '../assets/img/hotel.jpg'
-import bnbImg from '../assets/img/bnb.jpg'
-import motelImg from '../assets/img/motel.jpg'
 
 const BestSellerList = () => {
   const [properties, setProperties] = useState([{
@@ -42,7 +38,7 @@ const BestSellerList = () => {
         <div className='grid-x align-center grid-margin-x small-up-2'>
           {properties.map(property => (property.featured) ? 
             (<div className='cell medium-auto'>
-              <Link to={`listing/${property.id}`}><BestSellerItem src={property.image} city={property.city} province={property.province} price={property.price}/></Link>
+              <Link to={`/listing/${property.id}`}><BestSellerItem src={property.image} city={property.city} province={property.province} price={property.price}/></Link>
             </div>
           ):(<div></div>) )}
         </div>
