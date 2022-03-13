@@ -30,7 +30,7 @@ const PropertyDescriptionPage = () => {
 
 
 
-    const URL = `http://localhost:3004/properties/${id}`
+    const URL = `https://rest-inn-json-server.herokuapp.com/properties/${id}`
     //MAKE AN AJAX request
 
     fetch(URL) // GET

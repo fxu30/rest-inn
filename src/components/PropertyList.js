@@ -20,7 +20,9 @@ const PropertyList = () => {
   }])
 
   useEffect(()=>{
-    fetch("http://localhost:3004/properties").then(response => response.json())
+    const URL = `https://rest-inn-json-server.herokuapp.com/properties`
+    
+    fetch(URL).then(response => response.json())
       .then(json => {
 
         setProperties(json);
