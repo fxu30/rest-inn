@@ -1,31 +1,38 @@
-import React from 'react'
+import React, {useState,useEffect} from 'react'
 import PropertyTypeItem from './PropertyTypeItem'
-import resortImg from '../assets/img/resort.jpg'
-import hotelImg from '../assets/img/hotel.jpg'
-import bnbImg from '../assets/img/bnb.jpg'
-import motelImg from '../assets/img/motel.jpg'
 import { Link } from 'react-router-dom'
 
 
 const PropertyTypeList = () => {
+
+  const [propertyType, setPropertyType] = useState([{
+    id:0,
+    title:"",
+    image: null
+  }])
+  
+  useEffect(() => {
+    fetch("http://localhost:3004/propertyType").then(response => response.json())
+      .then(json => {
+
+        setPropertyType(json);
+      })
+      .catch(err => {
+        console.log(`Error ${err}`);
+      })
+
+  }, [])
+
   return (
       <div className="grid-container">
-        <div class="grid-x">
-          <div class="cell"><h4>Pick Your Property Type</h4></div>
+        <div className="grid-x">
+          <div className="cell"><h4>Pick Your Property Type</h4></div>
         </div>
         <div className='grid-x align-center grid-margin-x small-up-2'>
-          <div className='cell medium-auto'>
-            <Link to="/Signup"><PropertyTypeItem src={resortImg} type="Resorts"/></Link>
-          </div>
-          <div className='cell medium-auto'>
-            <PropertyTypeItem src={hotelImg} type="Hotels"/>
-          </div>
-          <div className='cell medium-auto'>
-            <PropertyTypeItem src={bnbImg} type="Bed and Breakfasts"/>
-          </div>
-          <div className='cell medium-auto'>
-            <PropertyTypeItem src={motelImg} type="Motels"/>
-          </div>
+          {propertyType.map(type =>
+            (<div className='cell medium-auto'>
+            <Link to="/Signup"><PropertyTypeItem src={type.image} type={type.title}/></Link>
+          </div>))}
         </div>
       </div>
   )

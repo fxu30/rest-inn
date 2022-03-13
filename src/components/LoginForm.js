@@ -19,7 +19,7 @@ const LoginForm = () => {
         <div className='cell medium-4'></div>
         {/* autosign checkbox */}
         <div className='cell medium-4'></div>
-        <fieldset class="medium-4 cell">
+        <fieldset className="medium-4 cell">
           <input id="autosign" type="checkbox"/>
           <label for="autosign">Sign me in automatically next time</label>
         </fieldset>

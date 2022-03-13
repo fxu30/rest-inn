@@ -20,39 +20,39 @@ const SignupForm = () => {
         <div className='cell medium-4'></div>
         {/* password */}
         <div className='cell medium-4'></div>
-        <div class="medium-4 cell">
+        <div className="medium-4 cell">
           <label htmlFor='password'>Password</label>
           <input type="password" id='password'/>
         </div>
         <div className='cell medium-4'></div>
         {/* password requirements*/}
         <div className='cell medium-4'></div>
-        <p class="medium-6 cell passwordreq">6 to 20 letters with at least 1 number</p> 
+        <p className="medium-6 cell passwordreq">6 to 20 letters with at least 1 number</p> 
         <div className='cell medium-2'></div>
         {/* first name */}
         <div className='cell medium-4'></div>
-        <div class="medium-4 cell">
+        <div className="medium-4 cell">
           <label htmlFor='lastname'>First Name</label>
           <input type="text" id='lastname'/>
         </div>
         <div className='cell medium-4'></div>
         {/* last name */}
         <div className='cell medium-4'></div>
-        <div class="medium-4 cell">
+        <div className="medium-4 cell">
           <label htmlFor='firstname'>Last Name</label>
           <input type="text" id='firstname'/>
         </div>
         <div className='cell medium-4'></div>
         {/* autosign checkbox */}
         <div className='cell medium-4'></div>
-        <fieldset class="medium-4 cell">
+        <fieldset className="medium-4 cell">
           <input id="autosign" type="checkbox"/>
           <label for="autosign">Keep in signed in</label>
         </fieldset>
         <div className='cell medium-4'></div>
         {/* newsletter checkbox */}
         <div className='cell medium-4'></div>
-        <fieldset class="medium-6 cell">
+        <fieldset className="medium-6 cell">
           <input id="autosign" type="checkbox"/>
           <label for="autosign">Email me exclusive deals and newsletter</label>
         </fieldset>
@@ -65,7 +65,7 @@ const SignupForm = () => {
         <div className='cell medium-4'></div>
         {/* already have account? */}
         <div className='cell medium-4'></div>
-        <label class="medium-4 cell">Already have an account? <Link to="../Login">Sign in</Link></label> 
+        <label className="medium-4 cell">Already have an account? <Link to="../Login">Sign in</Link></label> 
         <div className='cell medium-4'></div>
 
 
