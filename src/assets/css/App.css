@@ -334,3 +334,80 @@ p.passwordreq {
 }
 
 /* End of PROPERTY TYPE LIST */
+
+/* Property item Listing */
+.propertyItem {
+  display: flex;
+  position: relative;
+  margin: 20px;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.propertyItem:hover {
+  opacity: 0.8;
+}
+
+.propertyItem > img {
+  height: 200px;
+  width: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.propertyItem__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.propertyItem__heart {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+}
+
+.propertyItem__infoTop {
+  width: 40vw;
+}
+
+.propertyItem__infoTop > h3 {
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+.propertyItem__infoTop > p {
+  margin-top: 10px;
+  font-size: 13px;
+  color: gray;
+}
+
+.propertyItem__infoBottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.propertyItem__star {
+  color: red;
+}
+
+
+.propertyItem__stars {
+  display: flex;
+  align-items: center;
+}
+
+.propertyItem__price > p {
+  text-align: right;
+}
+
+.propertyItem__price {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+}
+
+/* End of Property Listing */
