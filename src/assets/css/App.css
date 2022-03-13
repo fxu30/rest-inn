@@ -307,3 +307,30 @@ p.passwordreq {
 
 
 /* End of Login Form*/
+
+/* PROPERTY TYPE LIST */
+
+.card {
+  overflow: hidden;
+  box-shadow: 0px 6px 18px -9px rgba(0,0,0,0.75);
+  transition: transfrom 100ms ease-in;
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: scale(1.07);
+}
+.card > img {
+  align-self: center;
+  width: 100%;
+}
+
+.card picture {
+  background-color: lightgrey;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 56%;
+  margin: 0.5rem
+}
+
+/* End of PROPERTY TYPE LIST */
