@@ -12,7 +12,7 @@ const BestSellerItem = ({src, city,province,price}) => {
           <h5>{city},{province}</h5>
           </div>
           <div className='cell aligh-right'>
-            <p>{price} / night</p>
+            <p>$ {price} / night</p>
           </div>
         </div>
       </div>
