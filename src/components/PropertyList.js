@@ -1,14 +1,31 @@
 import React , {useState, useEffect} from 'react'
 import PropertyListItem from './PropertyListItem';
-import { Link, useParams} from 'react-router-dom'
+import { Link, useSearchParams} from 'react-router-dom'
 import axios from 'axios';
+import configData from "../config.json"
 
-const PropertyList = () => {
+const PropertyList = ({searchType, searchTitle}) => {
   const [properties, setProperties] = useState([])
+  const [displayHeader, setDisplayHeader] = useState("")
+  const [searchParams] = useSearchParams();
 
   useEffect(()=>{
-    const URL = `http://localhost:8081/Properties`
-    
+    let URL;
+    let type = searchParams.get("type")
+    let title = searchParams.get("title")
+    if (searchType && searchTitle){
+      URL = `${configData.SERVER_URL}/Properties/search?type=${type}&title=${title}`
+      setDisplayHeader(`All ${type} Properties with title '${title}' `)
+    } else if (searchType){
+      URL = `${configData.SERVER_URL}/Properties/search?type=${type}&title=`
+      setDisplayHeader(`All ${type} Properties`)
+    } else if (searchTitle){
+      URL = `${configData.SERVER_URL}/Properties/search?type=&title=${title}`
+      setDisplayHeader(`All Properties with title '${title}' `)
+    } else {
+      URL = `${configData.SERVER_URL}/Properties`
+      setDisplayHeader(`All Properties`)
+    }
     axios.get(URL).then(response => response.data)
       .then(json => {
 
@@ -20,9 +37,7 @@ const PropertyList = () => {
       })
   },[])
 
-  const { type } = useParams()
-
-  if (type){
+  /*if (type){
     return (
       <div className='grid-x'>
         {properties.filter( property => property.type === type).map(property => (
@@ -30,7 +45,7 @@ const PropertyList = () => {
           <Link to={`/listing/${property.id}`}>
           <PropertyListItem 
           img={property.image} 
-          location={`${property.city},${property.province} in ${property.country}`}
+          location={`${property.location.city},${property.location.province} in ${property.location.country}`}
           title={property.title}
           description={property.description}
           price={property.price} 
@@ -41,13 +56,17 @@ const PropertyList = () => {
       </div>
     )
 
-  } else{
+  } else{*/
     return (
       <div className='grid-x'>
+        <div className='cell'>
+          <h2>{displayHeader}</h2>
+        </div>
         {properties.map(property => (
           <div className='cell'>
             <Link to={`/listing/${property.id}`}>
             <PropertyListItem 
+            type = {searchType}
             img={property.image} 
             location={`${property.location.city}, ${property.location.province} in ${property.location.country}`}
             title={property.title}
@@ -58,7 +77,7 @@ const PropertyList = () => {
           </div>))}
       </div>
     )
-  }
+  //}
 }
 
 export default PropertyList

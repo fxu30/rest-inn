@@ -1,58 +1,8 @@
-import React, {useState,useEffect} from 'react'
 import PropertyTypeItem from './PropertyTypeItem'
 import { Link} from 'react-router-dom'
 
 
 const PropertyTypeList = () => {
-
-  const [propertyType, setPropertyType] = useState([{
-    id:0,
-    title:"",
-    image: null
-  }])
-
-  const [properties, setProperties] = useState([{
-    id:0,
-    type:"",
-    featured:false,
-    image:"",
-    title:"",
-    description:"",
-    price:"",
-    street:"",
-    city:"",
-    province:"",
-    country:"",
-    amenities:[],
-    rules:[]
-  }])
-  
-
-  useEffect(() => {
-    const URL = `https://rest-inn-json-server.herokuapp.com/propertyType`
-
-    fetch(URL).then(response => response.json())
-      .then(json => {
-
-        setPropertyType(json);
-      })
-      .catch(err => {
-        console.log(`Error ${err}`);
-      })
-  }, [])
-
-  useEffect(()=>{
-    const URL = `https://rest-inn-json-server.herokuapp.com/properties`
-
-    fetch(URL).then(response => response.json())
-      .then(json => {
-
-        setProperties(json);
-      })
-      .catch(err => {
-        console.log(`Error ${err}`);
-      })
-  },[])
 
   return (
       <div className="grid-container">
@@ -60,10 +10,23 @@ const PropertyTypeList = () => {
           <div className="cell"><h4>Pick Your Property Type</h4></div>
         </div>
         <div className='grid-x align-center grid-margin-x small-up-2'>
-          {propertyType.map(type =>
+          {/* No more propertyType table inside database*/}
+          {/*propertyType.map(type =>
             (<div className='cell medium-auto'>
             <Link to={`/propertytype/${type.title}`}><PropertyTypeItem src={type.image} type={type.title}/></Link>
-          </div>))}
+          </div>))*/}
+          <div className='cell medium-auto'>
+            <Link to={`/listing/search?type=resort&title=`}><PropertyTypeItem src="/resort.jpg" type="Resorts"/></Link>
+          </div>
+          <div className='cell medium-auto'>
+            <Link to={`/listing/search?type=hotel&title=`}><PropertyTypeItem src="/hotel.jpg" type="Hotels"/></Link>
+          </div>
+          <div className='cell medium-auto'>
+            <Link to={`/listing/search/?type=bed and breakfast&title=`}><PropertyTypeItem src="/bnb.jpg" type="Bed and Breakfasts"/></Link>
+          </div>
+          <div className='cell medium-auto'>
+            <Link to={`/listing/search/?type=motel&title=`}><PropertyTypeItem src="/motel.jpg" type="Motels"/></Link>
+          </div>
         </div>
       </div>
   )

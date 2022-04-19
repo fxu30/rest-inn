@@ -4,13 +4,13 @@ import Footer from '../components/Footer'
 import PropertyList from '../components/PropertyList'
 
 /* Filtered Version of Property Listing Page */
-/* Route will be ./propertytype/:type  */
+/* Route will be /listing/search?type={targetType}&title=  */
 
 const PropertyTypePage = () => {
   return (
     <>
     <Header />
-    <PropertyList />
+    <PropertyList searchType={true} searchTitle={false} />
     <Footer />
     </>
   )

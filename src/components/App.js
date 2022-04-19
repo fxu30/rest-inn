@@ -21,12 +21,11 @@ function App() {
       <ScrollToTop>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="detail" element={<PropertyDescriptionPage />} />
         <Route path="signup" element={<RegistrationPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path='listing' element={<PropertyListingPage />} />
         <Route path='listing/:id' element={<PropertyDescriptionPage />} />
-        <Route path='propertytype/:type' element={<PropertyTypePage />} />
+        <Route path='listing/search' element={<PropertyTypePage />} />
       </Routes>
       </ScrollToTop>
     </BrowserRouter>
