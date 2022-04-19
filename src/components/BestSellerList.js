@@ -2,12 +2,13 @@ import React, {useState, useEffect} from 'react'
 import BestSellerItem from './BestSellerItem'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import configData from '../config.json'
 
 const BestSellerList = () => {
   const [properties, setProperties] = useState([])
 
   useEffect(()=>{
-    const URL = `http://localhost:8081/Properties?featured=true`
+    const URL = `${configData.SERVER_URL}/Properties?featured=true`
 
     axios.get(URL).then(response => response.data)
       .then(json => {
