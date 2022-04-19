@@ -30,28 +30,17 @@ const PropertyListItem = ({
                     <p>{description}</p>
                 </div>
 
-                {/*<div className="propertyItem__infoBottom">
-                    <div className="propertyItem__star">
-                        <StarIcon className="propertyItem__stars" />
-                        <p>
-                            <strong>{star}</strong>
-                        </p>
-                    </div>
-                  </div>*/}
             </div>
         </div>
 
         <div className='cell large-2'>
           <FavoriteBorderIcon className="propertyItem__heart" />
           <div className='propertyItem__price'>
-                        <h2>{price}</h2>
-                        <p>{total}</p>
-                    </div>
+            <h2>{price}</h2>
+            <p>{total}</p>
+          </div>
         </div>
-
-
-
-            
+      
     </div>
   )
 }
