@@ -65,7 +65,7 @@ const PropertyDescriptionPage = () => {
 
         <hr />
         
-        <h4>{property.price} / night</h4>
+        <h4>$ {property.price} / night</h4>
 
         <hr />
 
