@@ -6,6 +6,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import RuleIcon from '@mui/icons-material/Rule';
 import axios from 'axios';
+import configData from "../config.json"
 
 const PropertyDescriptionPage = () => {
 
@@ -19,7 +20,7 @@ const PropertyDescriptionPage = () => {
 
 
 
-    const URL = `http://localhost:8081/Properties/${id}`
+    const URL = `${configData.SERVER_URL}/Properties/${id}`
 
     axios.get(URL).then(response => response.data)
 
