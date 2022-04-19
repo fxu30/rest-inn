@@ -5,42 +5,30 @@ import { Link, useParams } from 'react-router-dom';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import RuleIcon from '@mui/icons-material/Rule';
+import axios from 'axios';
 
 const PropertyDescriptionPage = () => {
-  const [property, setProperty] = useState([{
-    id:0,
-    type:"",
-    featured:false,
-    image:"",
-    title:"",
-    description:"",
-    price:"",
-    street:"",
-    city:"",
-    province:"",
-    country:"",
-    amenities:[],
-    rules:[]
-  }])
-  const [amenities, setAmenities] = useState([{title:""}])
-  const [rules, setRules] = useState([{title:""}])
+
+  const [property, setProperty] = useState({})
+  const [location, setLocation] = useState({})
+  const [amenities, setAmenities] = useState([])
+  const [rules, setRules] = useState([])
 
   const { id } = useParams()
   useEffect(() => {
 
 
 
-    const URL = `https://rest-inn-json-server.herokuapp.com/properties/${id}`
-    //MAKE AN AJAX request
+    const URL = `http://localhost:8081/Properties/${id}`
 
-    fetch(URL) // GET
-      .then(response => response.json())
+    axios.get(URL).then(response => response.data)
 
       .then(json => {
-
         setProperty(json)
+        setLocation(json.location)
         setAmenities(json.amenities)
         setRules(json.rules)
+        console.log(json)
       })
       .catch(err => console.log(err))
 
@@ -73,7 +61,7 @@ const PropertyDescriptionPage = () => {
         <p>{property.description}</p>
 
         <hr />
-        <div><LocationOnIcon />{property.street}, {property.city}, {property.province} {property.country}</div>
+        <div><LocationOnIcon />{location.street}, {location.city}, {location.province} {location.country}</div>
 
         <hr />
         
@@ -133,7 +121,4 @@ const PropertyDescriptionPage = () => {
     </>
   )
 }
-/*
-<PropertyDesc id={property.id} type={property.type} image={property.image} title={property.title} description={property.description} 
-      price={property.price} streetAddress={property.location.streetAddress} city={property.location.city} province={property.location.province}/>*/
 export default PropertyDescriptionPage
