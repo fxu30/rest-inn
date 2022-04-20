@@ -16,16 +16,16 @@ const PropertyTypeList = () => {
             <Link to={`/propertytype/${type.title}`}><PropertyTypeItem src={type.image} type={type.title}/></Link>
           </div>))*/}
           <div className='cell medium-auto'>
-            <Link to={`/listing/search?type=resort&title=`}><PropertyTypeItem src="/resort.jpg" type="Resorts"/></Link>
+            <Link to={`/listing/search?type=resort`}><PropertyTypeItem src="/resort.jpg" type="Resorts"/></Link>
           </div>
           <div className='cell medium-auto'>
-            <Link to={`/listing/search?type=hotel&title=`}><PropertyTypeItem src="/hotel.jpg" type="Hotels"/></Link>
+            <Link to={`/listing/search?type=hotel`}><PropertyTypeItem src="/hotel.jpg" type="Hotels"/></Link>
           </div>
           <div className='cell medium-auto'>
-            <Link to={`/listing/search/?type=bed and breakfast&title=`}><PropertyTypeItem src="/bnb.jpg" type="Bed and Breakfasts"/></Link>
+            <Link to={`/listing/search/?type=bed and breakfast`}><PropertyTypeItem src="/bnb.jpg" type="Bed and Breakfasts"/></Link>
           </div>
           <div className='cell medium-auto'>
-            <Link to={`/listing/search/?type=motel&title=`}><PropertyTypeItem src="/motel.jpg" type="Motels"/></Link>
+            <Link to={`/listing/search/?type=motel`}><PropertyTypeItem src="/motel.jpg" type="Motels"/></Link>
           </div>
         </div>
       </div>

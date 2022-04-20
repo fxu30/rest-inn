@@ -10,7 +10,7 @@ const PropertyTypePage = () => {
   return (
     <>
     <Header />
-    <PropertyList searchType={true} searchTitle={false} />
+    <PropertyList />
     <Footer />
     </>
   )

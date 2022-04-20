@@ -4,7 +4,7 @@ import { Link, useSearchParams} from 'react-router-dom'
 import axios from 'axios';
 import configData from "../config.json"
 
-const PropertyList = ({searchType, searchTitle}) => {
+const PropertyList = () => {
   const [properties, setProperties] = useState([])
   const [displayHeader, setDisplayHeader] = useState("")
   const [searchParams] = useSearchParams();
@@ -13,13 +13,15 @@ const PropertyList = ({searchType, searchTitle}) => {
     let URL;
     let type = searchParams.get("type")
     let title = searchParams.get("title")
-    if (searchType && searchTitle){
+    
+
+    if (type !== null && title !== null){
       URL = `${configData.SERVER_URL}/Properties/search?type=${type}&title=${title}`
       setDisplayHeader(`All ${type} Properties with title '${title}' `)
-    } else if (searchType){
+    } else if (type !== null){
       URL = `${configData.SERVER_URL}/Properties/search?type=${type}&title=`
       setDisplayHeader(`All ${type} Properties`)
-    } else if (searchTitle){
+    } else if (title !== null){
       URL = `${configData.SERVER_URL}/Properties/search?type=&title=${title}`
       setDisplayHeader(`All Properties with title '${title}' `)
     } else {
@@ -66,7 +68,6 @@ const PropertyList = ({searchType, searchTitle}) => {
           <div className='cell'>
             <Link to={`/listing/${property.id}`}>
             <PropertyListItem 
-            type = {searchType}
             img={property.image} 
             location={`${property.location.city}, ${property.location.province} in ${property.location.country}`}
             title={property.title}
