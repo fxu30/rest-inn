@@ -26,13 +26,15 @@ function App() {
       <ScrollToTop>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="signup" element={<RegistrationPage />} />
+        <Route path="signup" element={
+        user ? <Navigate to='/login/dashboard' replace={true}/> : <RegistrationPage />} />
         <Route path="login" element={
-        user ? <Navigate to='dashboard' replace={true}/> : <LoginPage />} />
+        user ? <Navigate to='/login/dashboard' replace={true}/> : <LoginPage />} />
         <Route path='listing' element={<PropertyListingPage />} />
         <Route path='listing/:id' element={<PropertyDescriptionPage />} />
         <Route path='listing/search' element={<PropertyTypePage />} />
-        <Route path='login/dashboard' element={<DashboardPage />} />
+        <Route path='login/dashboard' element={
+        user ? <DashboardPage /> : <Navigate to='/login' replace={true}/>} />
       </Routes>
       </ScrollToTop>
     </BrowserRouter>

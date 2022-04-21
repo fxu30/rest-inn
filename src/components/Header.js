@@ -4,14 +4,15 @@ import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ButtonWithDropDown from './ButtonWithDropDown';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 
 const Header = () => {
 
   const [searchContent, setSearchContent] = useState("")
-  const navigate = useNavigate;
+  const user = useSelector(state => state.user.currentUser);
 
   return (
     
@@ -29,7 +30,9 @@ const Header = () => {
           <li><a href="#"><Link to="/Listing">Vacation Properties</Link></a></li>
           <li><a href="#"><LanguageIcon /></a></li>
           
-          <li><a href="#"><AccountCircleIcon /></a></li>
+          <li>{user ? 
+          <Link to='/login/dashboard'><AccountCircleIcon /></Link> : 
+          <Link to='/login'><AccountCircleIcon /></Link>}</li>
           <li className="has-submenu">
             <ButtonWithDropDown />  
           </li>
