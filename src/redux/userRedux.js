@@ -27,6 +27,9 @@ const userSlice = createSlice({
             state.currentUser = null;
             state.error = false;
         },
+        resetError: (state) => {
+            state.error = false;
+        }
     }
 })
 

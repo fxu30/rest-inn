@@ -17,8 +17,12 @@ export const login = async (dispatch, user) => {
     }
 }
 
-export const logout = async (dispatch) => {
-    dispatch(logoutStart());
-    dispatch(logoutSuccess());
+export const logout = (dispatch) => {
+  dispatch(logoutStart());
+  dispatch(logoutSuccess());
   
-  };
+};
+
+export const resetError = (dispatch) => {
+  dispatch(resetError())
+}
