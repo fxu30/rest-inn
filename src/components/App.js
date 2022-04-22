@@ -14,6 +14,7 @@ import RegistrationPage from '../pages/RegistrationPage';
 import ScrollToTop from '../components/ScrollToTop'
 import PropertyTypePage from '../pages/PropertyTypePage';
 import DashboardPage from '../pages/DashboardPage'
+import LogoutPage from '../pages/LogoutPage'
 import { useSelector } from 'react-redux';
 
 
@@ -30,6 +31,7 @@ function App() {
         user ? <Navigate to='/login/dashboard' replace={true}/> : <RegistrationPage />} />
         <Route path="login" element={
         user ? <Navigate to='/login/dashboard' replace={true}/> : <LoginPage />} />
+        <Route path='logout' element={<LogoutPage/>} />
         <Route path='listing' element={<PropertyListingPage />} />
         <Route path='listing/:id' element={<PropertyDescriptionPage />} />
         <Route path='listing/search' element={<PropertyTypePage />} />

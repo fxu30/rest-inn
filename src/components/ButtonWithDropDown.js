@@ -9,7 +9,7 @@ const sampleVisitor = [
 ]
 
 const sampleUser = [
-    {path: "/", title: "Logout"}
+    {path: "/Logout", title: "Logout"}
 ]
 
 const ButtonWithDropDown = () => {

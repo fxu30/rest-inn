@@ -21,8 +21,8 @@ export const login = async (dispatch, user) => {
 export const logout = async (dispatch) => {
     dispatch(logoutStart());
     try {
-      const res = await axios.get(`${configData.SERVER_URL}/Auth/logout`);
-      dispatch(logoutSuccess(res.data));
+      //const res = await axios.post(`${configData.SERVER_URL}/logout`);
+      dispatch(logoutSuccess());
     } catch (err) {
       dispatch(logoutFailure());
     }
