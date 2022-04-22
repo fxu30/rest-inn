@@ -21,7 +21,7 @@ const Header = () => {
       <div className="top-bar-left">
       <ul className="menu">
           <li><input type="search" placeholder="Search" value={searchContent} onChange={event => setSearchContent(event.target.value)}/></li>
-          {(searchContent !== '')? <li><Link to={`/listing/search?title=${searchContent}`}><button type="button" className="button"><SearchIcon fontSize='small' /></button></Link></li>
+          {(searchContent !== '')? <li><Link replace to={`/listing/search?title=${searchContent}`}><button type="button" className="button"><SearchIcon fontSize='small' /></button></Link></li>
           :<button type="button" className="button"><SearchIcon fontSize='small' /></button>}
         </ul>
       </div>
