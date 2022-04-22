@@ -16,11 +16,10 @@ const BestSellerList = () => {
         const shuffled = [...json].sort(() => 0.5 - Math.random());
         // Max # of  best seller displays on home page is 6
         if (json.length >= 6){
-          shuffled.slice(0, 6);
+          setProperties(shuffled.slice(0, 6));
         }else{
-          shuffled.slice(0, json.length);
+          setProperties(shuffled.slice(0, json.length));
         }
-        setProperties(shuffled);
       })
       .catch(err => {
         console.log(`Error ${err}`);
