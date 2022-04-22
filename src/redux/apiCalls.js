@@ -4,7 +4,8 @@ import {
     loginSuccess,
     loginFailure,
     logoutStart,
-    logoutSuccess } from "./userRedux"
+    logoutSuccess,
+    resetError } from "./userRedux"
 import configData from "../config.json"
 
 export const login = async (dispatch, user) => {
@@ -23,6 +24,6 @@ export const logout = (dispatch) => {
   
 };
 
-export const resetError = (dispatch) => {
-  dispatch(resetError())
+export const reset = (dispatch) => {
+  dispatch(resetError());
 }

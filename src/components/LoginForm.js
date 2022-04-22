@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { login, resetError} from '../redux/apiCalls';
+import { login, reset} from '../redux/apiCalls';
 
 const LoginForm = () => {
   const alertColor = {
@@ -17,8 +17,9 @@ const LoginForm = () => {
     login(dispatch, {email, password})
   }
   useEffect(()=>{
-    resetError(dispatch)
+    reset(dispatch)
   },[])
+
   return (
     <form className='login-container'>
     <div className="grid-container">
