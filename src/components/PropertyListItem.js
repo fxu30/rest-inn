@@ -25,7 +25,7 @@ const PropertyListItem = ({
         <div className='propertyItem__info'>
                 <div className="propertyItem__infoTop">
                     <p>{location}</p>
-                    <Link to="/"><h3>{title}</h3></Link>
+                    <h3>{title}</h3>
                     <p>____</p>
                     <p>{description}</p>
                 </div>
