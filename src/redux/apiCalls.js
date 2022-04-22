@@ -4,8 +4,7 @@ import {
     loginSuccess,
     loginFailure,
     logoutStart,
-    logoutSuccess,
-    logoutFailure } from "./userRedux"
+    logoutSuccess } from "./userRedux"
 import configData from "../config.json"
 
 export const login = async (dispatch, user) => {
@@ -20,9 +19,6 @@ export const login = async (dispatch, user) => {
 
 export const logout = async (dispatch) => {
     dispatch(logoutStart());
-    try {
-      dispatch(logoutSuccess());
-    } catch (err) {
-      dispatch(logoutFailure());
-    }
+    dispatch(logoutSuccess());
+  
   };
