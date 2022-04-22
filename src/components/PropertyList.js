@@ -9,10 +9,11 @@ const PropertyList = () => {
   const [displayHeader, setDisplayHeader] = useState("")
   const [searchParams] = useSearchParams();
 
+  const type = searchParams.get("type")
+  const title = searchParams.get("title")
+
   useEffect(()=>{
     let URL;
-    let type = searchParams.get("type")
-    let title = searchParams.get("title")
     
 
     if (type !== null && title !== null){
@@ -37,7 +38,7 @@ const PropertyList = () => {
       .catch(err => {
         console.log(`Error ${err}`);
       })
-  },[])
+  },[type,title])
 
   /*if (type){
     return (
